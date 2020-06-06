@@ -81,7 +81,7 @@ def prepare_scraper(driver_path='./chromedriver'):
         driver.get(get_url)
         articles_list = []
         for page in range(requested_pages):
-            print('Scraping page {page} of {requested_pages}:'.format(page=page, requested_pages=requested_pages))
+            print('Scraping page {page} of {requested_pages}:'.format(page=(page + 1), requested_pages=requested_pages))
             try:
                 articles_section = driver.find_elements_by_tag_name("article")
                 if len(articles_section) == 0:
